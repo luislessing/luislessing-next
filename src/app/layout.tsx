@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins, Abril_Fatface } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 import Sidebar from "@/components/Sidebar";
 import Footer from "@/components/Footer";
 
@@ -77,6 +78,7 @@ export default function RootLayout({
           {children}
           <Footer />
         </main>
+        <Analytics />
       </body>
     </html>
   );

@@ -19,7 +19,7 @@ Modernes, minimalistisches Portfolio auf Basis von Next.js 14.
 - [x] Framer Motion einsetzen (Seitenübergänge, Scroll-Animationen, Karten im Portfolio)
 - [x] Kontaktformular ergänzen (Resend + Next.js API Route)
 - [ ] Music-Icon in der Sidebar verlinken (Spotify/SoundCloud/Bandcamp)
-- [ ] Analytics integrieren (z.B. Vercel Analytics oder Plausible)
+- [x] Analytics integrieren (Vercel Analytics)
 
 ### Low Priority
 - [x] Weitere Portfolio-Projekte hinzufügen
