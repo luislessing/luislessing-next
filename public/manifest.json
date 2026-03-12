@@ -1,0 +1,16 @@
+{
+  "name": "Luis Lessing Portfolio",
+  "short_name": "Luis Lessing",
+  "description": "Portfolio von Luis Lessing - Theater, Hörspiel und Fotografie",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#171717",
+  "theme_color": "#171717",
+  "icons": [
+    {
+      "src": "/images/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}
