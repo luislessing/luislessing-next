@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     description: "Portfolio von Luis Lessing – Kreativer Entwickler, Designer und Audio-Produzent.",
     images: [
       {
-        url: "/images/og-image.jpg",
+        url: "/images/demut.jpg",
         width: 1200,
         height: 630,
         alt: "Luis Lessing Portfolio",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Luis Lessing | Portfolio",
     description: "Portfolio von Luis Lessing – Kreativer Entwickler, Designer und Audio-Produzent.",
-    images: ["/images/og-image.jpg"],
+    images: ["/images/demut.jpg"],
   },
   verification: {
     // google: "google-site-verification-code",

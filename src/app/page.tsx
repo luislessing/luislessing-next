@@ -7,7 +7,7 @@ export default function HomePage() {
       <div className="absolute inset-0">
         <Image
           src="/images/demut.jpg"
-          alt="Demut Hintergrund"
+          alt=""
           fill
           priority
           className="object-cover"

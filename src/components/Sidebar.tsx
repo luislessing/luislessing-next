@@ -22,7 +22,7 @@ export default function Sidebar() {
           <Link href="/">
             <Image
               src="/images/logo-2.png"
-              alt="Logo"
+              alt="Luis Lessing"
               width={48}
               height={48}
               priority

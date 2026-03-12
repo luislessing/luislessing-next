@@ -1,88 +1,34 @@
 # Luis Lessing Portfolio
 
-Modernes, minimalistisches Portfolio auf Basis von Next.js 14.
+Minimalistisches Portfolio für Theater und Hörspiel-Produktionen.
 
-## Todo-Liste
+## Tech Stack
 
-### High Priority
-- [x] SEO optimieren (Meta Tags, Title, Description, Open Graph)
-- [x] Bilder optimieren (Next.js Image, Lazy Loading, WebP)
-- [x] Texte von alter Seite übernehmen (About, Portfolio, Footer)
-- [ ] Streaming-Links für "Demut" setzen (Spotify, Apple Music, SoundCloud)
-- [x] `generateMetadata` auf allen Unterseiten ergänzen (About, Portfolio, Contact)
-- [x] Portfolio-Grid auf `projects.ts` umstellen (Duplizierung entfernen)
+- **Next.js 16** (App Router)
+- **Tailwind CSS 4**
+- **TypeScript**
+- **Framer Motion** — Seitenübergänge & Animationen
+- **Resend** — Kontaktformular
+- **Vercel Analytics**
 
-### Medium Priority
-- [x] Impressum-Seite erstellen
-- [x] Footer auf allen Seiten konsistent hinzufügen
-- [x] Mobile Navigation verbessern
-- [x] Framer Motion einsetzen (Seitenübergänge, Scroll-Animationen, Karten im Portfolio)
-- [x] Kontaktformular ergänzen (Resend + Next.js API Route)
-- [ ] Music-Icon in der Sidebar verlinken (Spotify/SoundCloud/Bandcamp)
-- [x] Analytics integrieren (Vercel Analytics)
-
-### Low Priority
-- [x] Weitere Portfolio-Projekte hinzufügen
-- [x] Favicon und PWA-Konfiguration
-- [ ] Ungenutzte Assets in public/ aufräumen (page-bg-img-*.png, scrolldown-icon.png)
-- [ ] Alt-Texte aller Bilder prüfen und ergänzen
-
-## Technologie
-
-- Next.js 14 (App Router)
-- Tailwind CSS
-- TypeScript
-- Lucide React Icons
-
-## Getting Started
+## Entwicklung
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Struktur
+Umgebungsvariable in `.env.local` eintragen:
 
 ```
-src/
-├── app/
-│   ├── page.tsx           # Home
-│   ├── about/page.tsx     # Über mich
-│   ├── portfolio/
-│   │   ├── page.tsx      # Portfolio-Übersicht
-│   │   └── demut/page.tsx
-│   ├── contact/page.tsx
-│   ├── impressum/page.tsx
-│   └── layout.tsx         # Root Layout mit Sidebar
-├── components/
-│   ├── Sidebar.tsx        # Navigation + Bottom Nav (Mobile)
-│   └── Footer.tsx         # Footer
-└── public/
-    ├── images/             # Statische Bilder
-    ├── robots.txt
-    ├── sitemap.xml
-    └── manifest.json       # PWA Manifest
+RESEND_API_KEY=re_...
 ```
 
-## SEO
+## Neues Projekt hinzufügen
 
-- Metadata in `layout.tsx`
-- Open Graph Tags für Social Media
-- robots.txt und sitemap.xml
-- Semantic HTML
-- PWA manifest.json
+1. Eintrag in `src/lib/projects.ts` ergänzen:
 
-## Design
-
-- Farbschema: Stone (warmes Grau)
-- Schriften: Poppins (Sans), Abril Fatface (Serif)
-- Responsive mit Mobile-First Ansatz
-- Bottom Navigation auf Mobile
-
-
-tig! So funktioniert das Template:
-Neues Projekt hinzufügen
-1. Daten in src/lib/projects.ts hinzufügen:
+```ts
 {
   slug: "projekt-name",
   title: "Projekt Name",
@@ -96,7 +42,6 @@ Neues Projekt hinzufügen
   },
   content: [
     { title: "Über das Stück", text: "..." },
-    { title: "Entstehung", text: "..." },
   ],
   credits: [
     { role: "Regie", name: "Name" },
@@ -105,6 +50,19 @@ Neues Projekt hinzufügen
     { platform: "Spotify", url: "https://..." },
   ],
 }
-2. Bild nach public/images/ kopieren
-3. Portfolio-Übersicht in src/app/portfolio/page.tsx ergänzen
-Das wars! Die Seite wird automatisch erstellt unter /portfolio/projekt-name.
+```
+
+2. Bild nach `public/images/` kopieren
+
+Die Detailseite erscheint automatisch unter `/portfolio/projekt-name`.
+
+## OG-Bild aktualisieren
+
+Das Vorschaubild beim Teilen der Seite liegt unter `public/images/og-image.jpg` (1200×630px).
+Aktuell wird `demut.jpg` als Fallback genutzt — Pfad in `src/app/layout.tsx` anpassen sobald ein eigenes Bild vorliegt.
+
+## Offene Punkte
+
+- [ ] Streaming-Links für "Demut" setzen, sobald veröffentlicht (Spotify, Apple Music, SoundCloud in `src/lib/projects.ts`)
+- [ ] Music-Icon in der Sidebar verlinken (`src/components/Sidebar.tsx`)
+- [ ] OG-Bild durch eigenes 1200×630px Motiv ersetzen (`public/images/og-image.jpg`)
