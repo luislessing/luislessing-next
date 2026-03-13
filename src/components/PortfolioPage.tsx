@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { Music, ExternalLink } from "lucide-react";
+import { Music, ExternalLink, ArrowLeft } from "lucide-react";
 import { PortfolioProject } from "@/lib/projects";
 
 interface PortfolioPageProps {
@@ -29,6 +30,20 @@ export default function PortfolioPage({ project }: PortfolioPageProps) {
           className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+        <motion.div
+          initial={{ opacity: 0, x: -10 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
+          className="absolute top-6 left-8 lg:left-16"
+        >
+          <Link
+            href="/portfolio"
+            className="inline-flex items-center gap-2 text-sm px-4 py-2 bg-black/40 hover:bg-black/60 backdrop-blur-sm text-white rounded-sm transition-colors"
+          >
+            <ArrowLeft size={16} />
+            Alle Projekte
+          </Link>
+        </motion.div>
         <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-16 text-white">
           <motion.p
             initial={{ opacity: 0, y: 10 }}
